@@ -26,8 +26,8 @@ Extras:
 O **goFinances** é um projeto que tem o intuito de ajudar a mentar seus ganhos e despesas controlados, ajudando a monitorar as entradas e saidas financeiras.
 
 ## 🤔 Informações
-
-Esse projeto está sendo desenvolvido com base nas aulas do ignite da Rocketseat.
+- Nesse projeto aprendi a utilizar o YUP para validar os form do react-hook-form, com o yup fica muito mais fácil validar de forma fluida todos os inputs.
+- Esse projeto está sendo desenvolvido com base nas aulas do ignite da Rocketseat.
 <h2 align="center">
 <img alt="Controle de tarefas" src="https://github.com/MarquisAlexander/production-controletarefa-frontend/blob/master/src/assets/rocket.svg" width="200px" />
 </h2>
