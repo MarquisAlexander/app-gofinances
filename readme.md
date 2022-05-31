@@ -25,6 +25,8 @@ Extras:
   - [React Native Dotenv](https://www.npmjs.com/package/react-native-dotenv)
   - [Yup](https://www.npmjs.com/package/yup)
   - [React Navigation](https://reactnavigation.org/)
+    - [React Stack Navigation](https://reactnavigation.org/docs/stack-navigator/)
+    - [Bottom Tabs Navigator](https://reactnavigation.org/docs/bottom-tab-navigator/)
   - [Expo Application](https://docs.expo.dev/guides/authentication/#google)
 
 ## 💻 Projeto

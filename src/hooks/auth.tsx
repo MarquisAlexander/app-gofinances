@@ -1,4 +1,4 @@
-import React, { createContext, ReactNode, useContext, useState } from "react";
+import React, { createContext, ReactNode, useContext, useState, useEffect } from "react";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
 import { CLIENT_ID, REDIRECT_URI } from "react-native-dotenv";
@@ -34,6 +34,8 @@ const AuthContext = createContext({} as AuthContextData);
 
 function AuthProvider({ children }: AuthProviderProps) {
 	const [user, setUser] = useState<User>({} as User);
+	const [userStorageLoading, setUserStorageLoading] = useState(true);
+	const userStorageKey = "@gofinances:user"
 
 	async function signInWithGoogle() {
 		try {
@@ -61,7 +63,7 @@ function AuthProvider({ children }: AuthProviderProps) {
 
 				setUser(userLogged);
 				await AsyncStorage.setItem(
-					"@gofinances:user",
+					userStorageKey,
 					JSON.stringify(userLogged),
 				);
 			}
@@ -88,7 +90,7 @@ function AuthProvider({ children }: AuthProviderProps) {
 				};
 				setUser(userLogged);
 				await AsyncStorage.setItem(
-					"@gofinances:user",
+					userStorageKey,
 					JSON.stringify(userLogged),
 				);
 			}
@@ -96,6 +98,20 @@ function AuthProvider({ children }: AuthProviderProps) {
 			throw new Error(error);
 		}
 	}
+
+	useEffect(() => {
+		async function loadUserStorageData() {
+			const userStoraged = await AsyncStorage.getItem(userStorageKey);
+
+			if (userStoraged) {
+				const userLogged = JSON.parse(userStoraged) as User;
+				setUser(userLogged)
+			}
+			setUserStorageLoading(false);
+		}
+
+		loadUserStorageData();
+	}, [])
 
 	return (
 		<AuthContext.Provider value={{ user, signInWithGoogle, signInWithApple }}>
