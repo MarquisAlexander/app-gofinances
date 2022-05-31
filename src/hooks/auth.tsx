@@ -1,4 +1,7 @@
 import React, { createContext, ReactNode, useContext, useState } from "react";
+
+import { CLIENT_ID, REDIRECT_URI } from 'react-native-dotenv';
+
 import * as AuthSession from "expo-auth-session";
 
 interface AuthProviderProps {
@@ -31,9 +34,6 @@ function AuthProvider({ children }: AuthProviderProps) {
 
 	async function signInWithGoogle() {
 		try {
-			const CLIENT_ID =
-				"472011875579-dgfn45m9psotgi5g5j5iflvu7deijuv5.apps.googleusercontent.com";
-			const REDIRECT_URI = "https://auth.expo.io/@marquisalexander/gofinances";
 			const RESPONSE_TYPE = "token";
 			const SCOPE = encodeURI("profile email");
 
