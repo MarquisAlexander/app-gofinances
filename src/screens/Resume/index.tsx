@@ -9,6 +9,8 @@ import { addMonths, subMonths, format } from "date-fns";
 import { ptBR } from "date-fns/locale";
 
 import { useTheme } from "styled-components";
+import { useAuth } from "../../hooks/auth";
+
 import { HistoryCard } from "../../components/HistoryCard";
 import {
 	Container,
@@ -49,6 +51,7 @@ export function Resume() {
 	);
 
 	const theme = useTheme();
+	const {user} = useAuth()
 
 	function handleDateChange(action: "next" | "prev") {
 		if (action === "next") {
@@ -66,7 +69,7 @@ export function Resume() {
 
 	async function loadData() {
 		setIsLoading(true);
-		const datakey = "@gofinances:transactions";
+		const datakey = `@gofinances:transactions_user:${user.id}`;
 		const response = await AsyncStorage.getItem(datakey);
 		const responseFormatted = response ? JSON.parse(response) : [];
 
