@@ -39,6 +39,7 @@ O **goFinances** é um projeto que tem o intuito de ajudar a mentar seus ganhos 
 - Nesse projeto foi implementado a autenticação OAuth com contas google e contas apple.
 - Para armazenar de forma segura algumas informações utilizadas para autenticar e pegar informações de contas google foi utilizado o arquivo .env junto com a lib **react-native-dotenv**, assim é possível usar ids de autenticação na aplicação sem deixar eles direto no código e assim não subir esses ids para o repositório.
 - Esse projeto está sendo desenvolvido com base nas aulas do ignite da Rocketseat.
+- Nesse projeto foi criado um hook personalizado o useAuth(), para fazer cuidar de toda a logica de signIn e signOut.
 
 ❗**Importante:** Foi implementado o login com a apple mas eu não foi testado, pois para testar essa autenticação é necessário ter um dispositivo fisico com o iOS(Iphone).
 
