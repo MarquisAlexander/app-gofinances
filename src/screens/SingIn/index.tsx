@@ -32,7 +32,6 @@ export function SignIn() {
 		} catch (error) {
 			console.log("handleSignInWithGoogle", error);
 			Alert.alert("Não foi possível conectar a conta google");
-		} finally {
 			setIsLoading(false);
 		}
 	}
@@ -44,7 +43,6 @@ export function SignIn() {
 		} catch (error) {
 			console.log("handleSignInWithGoogle", error);
 			Alert.alert("Não foi possível conectar a conta Apple");
-		} finally {
 			setIsLoading(false);
 		}
 	}
