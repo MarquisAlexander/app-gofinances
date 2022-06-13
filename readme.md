@@ -44,10 +44,6 @@ O **goFinances** é um projeto que tem o intuito de ajudar a mentar seus ganhos 
 
 ❗**Importante:** Foi implementado o login com a apple, mas eu não foi testado, pois, para testar essa autenticação é necessário ter um dispositivo fisico com o iOS(Iphone).
 
-<h2 align="center">
-<img alt="Controle de tarefas" src="https://github.com/MarquisAlexander/production-controletarefa-frontend/blob/master/src/assets/rocket.svg" width="200px" />
-</h2>
-
 ## 🎉 Aplicação online
 No futuro essa aplicação estará disponível para download na googleplay😁
 
